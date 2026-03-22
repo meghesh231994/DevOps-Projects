@@ -57,7 +57,7 @@
   </distributionManagement>
 
   <dependencies>
-    
+
     <dependency>
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis</artifactId>
@@ -233,6 +233,11 @@
                 <url>${cargo.maven.containerUrl}</url>
               </zipUrlInstaller>
             </container>
+            <configuration>
+              <properties>
+                <cargo.servlet.port>${cargo.servlet.port}</cargo.servlet.port>
+              </properties>
+            </configuration>
             <daemon>
               <properties>
                 <cargo.daemon.url>http://localhost:18000</cargo.daemon.url>
@@ -303,6 +308,7 @@
   <properties>
     <cargo.maven.containerId>tomcat${tomcat.major-version}x</cargo.maven.containerId>
     <cargo.maven.containerUrl>https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major-version}/v${tomcat.version}/bin/apache-tomcat-${tomcat.version}.zip</cargo.maven.containerUrl>
+    <cargo.servlet.port>8081</cargo.servlet.port>
     <tomcat.major-version />
     <tomcat.version />
 
@@ -428,5 +434,3 @@
       </properties>
     </profile>
   </profiles>
-
-</project>
